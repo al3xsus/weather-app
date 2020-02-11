@@ -1,0 +1,5 @@
+{
+    "dark-sky-secret-key": "",
+    "weather-api": "https://api.darksky.net/forecast/",
+    "proxy": "https://yacdn.org/serve/"
+}

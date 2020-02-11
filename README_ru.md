@@ -10,4 +10,4 @@ ___
 
 ## Как это работает
 
-Основано на данном туториале [https://www.youtube.com/watch?v=wPElVpR1rwA](https://www.youtube.com/watch?v=wPElVpR1rwA)
+Основано на данном туториале [https://www.youtube.com/watch?v=wPElVpR1rwA](https://www.youtube.com/watch?v=wPElVpR1rwA), но я ещё добавил обработку ошибок, загрузку настроек из JSON-файла и т.д. Для начала работы нужно создать файл `settings.local.json` из шаблона `settings.local.template.json` и прописать туда свой Dark Sky API secret key.

@@ -14,4 +14,4 @@ Weather app, based on browser's latitude and longitude. Ultra-simple, get info f
 
 ## How it works
 
-Purely based on this tutorial [https://www.youtube.com/watch?v=wPElVpR1rwA](https://www.youtube.com/watch?v=wPElVpR1rwA)
+Based on this tutorial [https://www.youtube.com/watch?v=wPElVpR1rwA](https://www.youtube.com/watch?v=wPElVpR1rwA), but I also added error handling, loading variables from JSON document and so on. You should create file `settings.local.json` from `settings.local.template.json` and add your Dark Sky API secret key to make it work

@@ -16,8 +16,8 @@ window.addEventListener('load', () => {
         body.innerHTML = "<h1>Can't access navigator.geolocation</h1>"
     }
 
-    function setIcons(icon, iconID) {
-        const skycons = new Skycons({color: "white"});
+    function setIcons(icon, iconID, color) {
+        const skycons = new Skycons({color});
         const currentIcon = icon.replace(/-/g, "_").toUpperCase();
         skycons.play();
         return skycons.set(iconID, Skycons[currentIcon]);
@@ -38,6 +38,7 @@ window.addEventListener('load', () => {
     function geoSuccess(position) {
         long = position.coords.longitude;
         lat = position.coords.latitude;
+
 
         fetch("settings.local.json")
                 .then(processJSONRequest)
@@ -63,7 +64,17 @@ window.addEventListener('load', () => {
                         temperatureDescription.textContent = currently.summary;
                         locationTimezone.textContent = timezone; 
                         //set icon
-                        setIcons(icon, document.querySelector('.icon'));
+                        setIcons(icon, document.querySelector('.icon'), "white");
+
+                        //dynamic favicon
+                        let favicon = document.querySelector("link[rel*='icon']");
+                        let faviconSize = 32;
+                        let canvas = document.createElement('canvas');
+                        canvas.width = faviconSize;
+                        canvas.height = faviconSize;
+                        setIcons(icon, canvas, "black");
+                        favicon.href = canvas.toDataURL('image/gif');
+                      
                         // change temp to Celsius/Fahrenheit
                         degreeSection.addEventListener('click', () => {
                             if (temperatureSpan.textContent === "F") {
